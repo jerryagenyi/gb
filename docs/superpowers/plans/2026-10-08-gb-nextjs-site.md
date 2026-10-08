@@ -414,6 +414,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://genevievebosah.com'),
   title: site.meta.title,
   description: site.hero.lead,
+  alternates: { canonical: '/' },
   openGraph: {
     title: site.meta.title,
     description: site.hero.lead,
@@ -1196,23 +1197,23 @@ Run: `vercel whoami` → Expected: `jerryagenyi`
 - [ ] **Step 2: Create + link project**
 
 ```bash
-vercel project add genevievebosah
-vercel link --yes --project genevievebosah
+vercel project add gb
+vercel link --yes --project gb
 vercel git connect https://github.com/jerryagenyi/gb.git
 ```
 
 Expected: `.vercel/` created (gitignored); "Connected GitHub repository jerryagenyi/gb". Framework auto-detected as Next.js; production branch `main`.
 
-- [ ] **Step 3: Push → production deploy on `genevievebosah.vercel.app`**
+- [ ] **Step 3: Push → production deploy on `<production .vercel.app URL>`**
 
 ```bash
 git push origin main
-vercel ls genevievebosah
+vercel ls gb
 ```
 
 Expected: newest deployment `● Ready`, Production.
 
-- [ ] **Step 4: Verify live** — open the production URL in the browser pane; repeat Task 9 Step 1 checks; `curl -sI https://genevievebosah.vercel.app/blog -o /dev/null -w '%{http_code} %{redirect_url}\n'` → `307 https://genevievebosah.vercel.app/`
+- [ ] **Step 4: Verify live** — open the production URL in the browser pane; repeat Task 9 Step 1 checks; `curl -sI https://<production .vercel.app URL>/blog -o /dev/null -w '%{http_code} %{redirect_url}\n'` → `307 https://<production .vercel.app URL>/`
 
 - [ ] **Step 5:** Share the URL with Genevieve for sign-off. **Phase 1 done.**
 
@@ -1222,14 +1223,15 @@ Expected: newest deployment `● Ready`, Production.
 
 Ops runbook, not code. DNS lives in **cPanel → Zone Editor** on the Namecheap hosting (nameservers `dns1/dns2.namecheaphosting.com`).
 
+- [ ] **Step 0: Blocked until** Genevieve regains Namecheap/cPanel + WP-admin access (in progress).
 - [ ] **Step 1: Back up WordPress** — cPanel → Backup → *Download a Full Account Backup*; plus WP admin → Tools → Export → *All content* (WXR XML — contains the 2 posts, needed in Phase 3). Store both outside the repo.
 - [ ] **Step 2: Snapshot the DNS zone** — export/screenshot every record in Zone Editor (A, CNAME, MX, TXT/SPF/DKIM/DMARC, `mail`, `autodiscover`, `cpanel`, `webmail`, `ftp`). Commit nothing secret; keep the snapshot with the backups.
 - [ ] **Step 3: Lower TTL** on `@` A and `www` records to 300s; wait for the old TTL to expire (≤24h).
 - [ ] **Step 4: Add domains in Vercel**
 
 ```bash
-vercel domains add genevievebosah.com genevievebosah
-vercel domains add www.genevievebosah.com genevievebosah
+vercel domains add genevievebosah.com gb
+vercel domains add www.genevievebosah.com gb
 vercel domains inspect genevievebosah.com
 ```
 
@@ -1298,8 +1300,10 @@ Backlog, nothing committed:
 
 ---
 
-## Open questions (non-blocking for Phase 1)
+## Decisions (2026-10-08)
 
-1. Does `hello@genevievebosah.com` exist? (Design uses it for "Book a discovery call" + footer Email.)
-2. Vercel project name `genevievebosah` OK?
-3. Phase 2: OK that the 2 old 2021 posts are offline (backed up, redirected home) until Phase 3?
+1. `hello@genevievebosah.com` existence unknown — Genevieve is sorting Namecheap/WP logins. Keep as-is for v1.
+2. Vercel project name: **`gb`**. SEO is unaffected: the canonical tag (`alternates.canonical` → `https://genevievebosah.com/`) tells search engines the custom domain is the real page, so the `*.vercel.app` alias is never treated as the primary copy.
+3. The 2 old 2021 posts may be offline (backed up, redirected home) until Phase 3.
+4. Build work happens on branch `feat/nextjs-port` (Vercel preview deploys), merged to `main` after review.
+5. **Old WordPress.com site** (no longer in use) still holds **31 posts (27 published, 4 drafts, 2016–2020)**. Phase 3 should export these too (WP.com → Tools → Export) and decide with Genevieve which to republish.
