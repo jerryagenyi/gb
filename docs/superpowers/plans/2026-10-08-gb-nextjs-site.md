@@ -1219,6 +1219,11 @@ Expected: newest deployment `● Ready`, Production.
 
 ---
 
+## Status (2026-10-08)
+
+- **Phase 1: DONE.** Production: https://gb-khaki.vercel.app (Vercel project `gb`, Git-connected, `main` = production). 8/8 tests, lint and build clean; independent review passed.
+- **Phase 2: Vercel side done.** `genevievebosah.com` + `www.genevievebosah.com` added to project `gb`. Vercel requires **`A @ 76.76.21.21`** and **`A www 76.76.21.21`**. Waiting on Genevieve's cPanel/WP access for Steps 1–9.
+
 ## Phase 2 — Domain cutover (only after Genevieve's go-ahead)
 
 Ops runbook, not code. DNS lives in **cPanel → Zone Editor** on the Namecheap hosting (nameservers `dns1/dns2.namecheaphosting.com`).
