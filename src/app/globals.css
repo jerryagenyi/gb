@@ -73,6 +73,13 @@ nav{
 .roles-track{display:flex;gap:3rem;align-items:center;font-family:var(--serif-display);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;flex-wrap:wrap;justify-content:center}
 .roles-track span{display:flex;align-items:center;gap:3rem}
 .roles-track span:after{content:"✦";color:var(--gold);font-size:11px}
+@media(max-width:760px){
+  .roles{padding:0}
+  .roles-track{flex-direction:column;gap:0;white-space:normal;font-size:13px;letter-spacing:.14em}
+  .roles-track span{display:block;width:100%;text-align:center;padding:1.1rem 2rem;border-bottom:1px solid var(--line)}
+  .roles-track span:last-child{border-bottom:none}
+  .roles-track span:after{content:none}
+}
 
 /* SECTIONS */
 section{padding:5rem 0;border-bottom:1px solid var(--line)}
@@ -116,6 +123,8 @@ section{padding:5rem 0;border-bottom:1px solid var(--line)}
 .speaking .sec-label{color:var(--gold)}
 .speaking .sec-title{color:var(--paper)}
 .speaking .sec-title em{color:#c9a55f}
+.speaking .btn-primary{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.speaking .btn-primary:hover{background:#c9a55f;border-color:#c9a55f;color:var(--ink)}
 .speak-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:1rem}
 @media(max-width:760px){.speak-grid{grid-template-columns:1fr;gap:2rem}}
 .speak-body p{color:rgba(244,239,232,.78);font-weight:300;margin-bottom:1.2rem;font-size:1.08rem}
