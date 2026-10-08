@@ -1281,6 +1281,14 @@ Trigger: Genevieve wants to blog. Not to be started before then.
 | Headless redirect / front-end lock | Yes (small mu-plugin or a maintained "headless mode" plugin) | Stop the WP theme front-end from being indexed/served. |
 | Security hardening (e.g. Wordfence or equivalent) | Recommended | Shared hosting + public `/wp-admin`. |
 
+**Carry-overs from the Phase 1 code review (must address when adding routes):**
+- `RevealObserver` runs once from the root layout. With client-side navigation to `/blog`, new `.reveal` elements would stay at opacity 0 — re-run the effect on `usePathname()` (or mount per page).
+- Next 16 no longer forces `scroll-behavior` during route changes — add `data-scroll-behavior="smooth"` to `<html>` once `<Link>` routes exist.
+- Keep `trailingSlash: false`; old WP URLs (`/about/`) take a 308 to the slashless form first.
+- Consider redirecting WP leftovers: `/feed`, `/category/*`, `/author/*`, `/?p=N`.
+- Known, accepted v1 risk: if the JS bundle fails to load, `.reveal` content stays hidden (same as the original design's script approach).
+- Test gaps to close: structural (tag/class/attr) fidelity diff, full redirect-array snapshot, no-IntersectionObserver fallback test.
+
 Write a dedicated implementation plan for this phase when triggered.
 
 ---
