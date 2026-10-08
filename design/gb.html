@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr Genevieve Bosah — Communication Scholar, Strategist & Speaker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1714;
+  --ink-soft:#4a443d;
+  --ink-faint:#8a8178;
+  --paper:#f4efe8;
+  --paper-warm:#ece5da;
+  --gold:#9a7b३e;
+  --gold:#9a7b3e;
+  --teal:#2e5a52;
+  --plum:#5a3d52;
+  --line:#d8cfc2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Newsreader',Georgia,serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+  font-size:18px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 2rem}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(244,239,232,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1080px;margin:0 auto;padding:1.1rem 2rem}
+.brand{font-family:'Fraunces',serif;font-weight:500;font-size:20px;letter-spacing:.01em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--gold)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-family:'Fraunces',serif;font-size:14px;color:var(--ink-soft);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* HERO */
+.hero{padding:6rem 0 4.5rem;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero:before{
+  content:"";position:absolute;top:-30%;right:-10%;width:520px;height:520px;
+  background:radial-gradient(circle,rgba(154,123,62,.10),transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+.eyebrow{font-family:'Fraunces',serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-weight:400;
+  font-size:clamp(2.6rem,6vw,4.6rem);
+  line-height:1.04;
+  letter-spacing:-.015em;
+  margin-bottom:1.6rem;
+  max-width:14ch;
+}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero-lead{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--ink-soft);max-width:54ch;font-weight:300;margin-bottom:2.4rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{
+  font-family:'Fraunces',serif;font-size:15px;letter-spacing:.01em;
+  padding:.85rem 1.7rem;border-radius:2px;text-decoration:none;
+  transition:all .25s;cursor:pointer;border:1px solid var(--ink);
+}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--teal);border-color:var(--teal)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* MARQUEE OF ROLES */
+.roles{padding:2.2rem 0;border-bottom:1px solid var(--line);overflow:hidden}
+.roles-track{display:flex;gap:3rem;align-items:center;font-family:'Fraunces',serif;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;flex-wrap:wrap;justify-content:center}
+.roles-track span{display:flex;align-items:center;gap:3rem}
+.roles-track span:after{content:"✦";color:var(--gold);font-size:11px}
+
+/* SECTIONS */
+section{padding:5rem 0;border-bottom:1px solid var(--line)}
+.sec-label{font-family:'Fraunces',serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.sec-title{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:2rem;max-width:20ch}
+.sec-title em{font-style:italic;color:var(--teal)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:4rem;align-items:start}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:2.5rem}}
+.about-body p{margin-bottom:1.3rem;color:var(--ink-soft);font-weight:300;font-size:1.08rem}
+.about-body p strong{color:var(--ink);font-weight:500}
+.about-side{border-left:2px solid var(--gold);padding-left:1.6rem}
+.about-side h4{font-family:'Fraunces',serif;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin:1.4rem 0 .4rem}
+.about-side h4:first-child{margin-top:0}
+.about-side p{font-size:.96rem;color:var(--ink-soft);font-weight:300}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1rem}
+@media(max-width:760px){.pillars{grid-template-columns:1fr}}
+.pillar{background:var(--paper-warm);padding:2rem 1.8rem;border-radius:3px;border-top:3px solid var(--teal);transition:transform .25s}
+.pillar:nth-child(2){border-top-color:var(--gold)}
+.pillar:nth-child(3){border-top-color:var(--plum)}
+.pillar:hover{transform:translateY(-4px)}
+.pillar-num{font-family:'Fraunces',serif;font-size:13px;color:var(--ink-faint);letter-spacing:.1em}
+.pillar h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.4rem;margin:.6rem 0 .8rem;color:var(--ink)}
+.pillar p{font-size:1rem;color:var(--ink-soft);font-weight:300}
+
+/* RESEARCH */
+.research-list{margin-top:1rem}
+.research-item{display:grid;grid-template-columns:auto 1fr;gap:2rem;padding:1.8rem 0;border-top:1px solid var(--line);align-items:baseline}
+.research-item:last-child{border-bottom:1px solid var(--line)}
+@media(max-width:760px){.research-item{grid-template-columns:1fr;gap:.5rem}}
+.research-tag{font-family:'Fraunces',serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.research-item h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.3rem;line-height:1.3;margin-bottom:.4rem;color:var(--ink)}
+.research-item h3 em{font-style:italic}
+.research-item p{font-size:1rem;color:var(--ink-soft);font-weight:300}
+
+/* SPEAKING */
+.speaking{background:var(--ink);color:var(--paper);border:none}
+.speaking .sec-label{color:var(--gold)}
+.speaking .sec-title{color:var(--paper)}
+.speaking .sec-title em{color:#c9a55f}
+.speak-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:1rem}
+@media(max-width:760px){.speak-grid{grid-template-columns:1fr;gap:2rem}}
+.speak-body p{color:rgba(244,239,232,.78);font-weight:300;margin-bottom:1.2rem;font-size:1.08rem}
+.speak-topics{list-style:none}
+.speak-topics li{padding:.7rem 0;border-bottom:1px solid rgba(244,239,232,.15);font-family:'Fraunces',serif;font-size:1.05rem;color:var(--paper)}
+.speak-topics li:before{content:"—";color:var(--gold);margin-right:.8rem}
+
+/* CTA STRIP */
+.cta-strip{text-align:center;padding:5.5rem 0}
+.cta-strip h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;letter-spacing:-.01em}
+.cta-strip h2 em{font-style:italic;color:var(--teal)}
+.cta-strip p{color:var(--ink-soft);font-weight:300;max-width:48ch;margin:0 auto 2.2rem;font-size:1.1rem}
+
+/* FOOTER */
+footer{background:var(--paper-warm);padding:3.5rem 0 2.5rem;border-top:1px solid var(--line)}
+.foot-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem}
+.foot-brand{font-family:'Fraunces',serif;font-size:22px;color:var(--ink)}
+.foot-brand span{color:var(--gold)}
+.foot-tag{font-size:.95rem;color:var(--ink-soft);font-weight:300;margin-top:.4rem;max-width:30ch}
+.foot-links{display:flex;gap:2rem;flex-wrap:wrap}
+.foot-col h5{font-family:'Fraunces',serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.8rem}
+.foot-col a{display:block;font-size:.96rem;color:var(--ink-soft);text-decoration:none;margin-bottom:.5rem;transition:color .2s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--ink-faint);font-weight:300}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="brand">Dr Genevieve <span>Bosah</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow reveal">Communication Scholar · Strategist · Speaker</p>
+    <h1 class="reveal">I study how stories <em>shape power</em> — and help leaders use that power well.</h1>
+    <p class="hero-lead reveal">Associate Professor and communication researcher. I work at the intersection of media scholarship, strategic communication, and leadership — helping institutions and individuals communicate with clarity, authority, and strategy.</p>
+    <div class="hero-cta reveal">
+      <a href="#research" class="btn btn-primary">Explore the research</a>
+      <a href="#speaking" class="btn btn-ghost">Invite me to speak</a>
+    </div>
+  </div>
+</header>
+
+<div class="roles">
+  <div class="roles-track">
+    <span>PhD, Media & Communication</span>
+    <span>Associate Professor</span>
+    <span>Strategic Communicator</span>
+    <span>Author</span>
+    <span>Speaker</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <p class="sec-label reveal">About</p>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <h2 class="sec-title">A scholar of communication, a builder of leaders.</h2>
+        <p>I am an academic and strategic communicator with more than fifteen years of professional experience across Africa and Europe. My doctoral research examined the field of Nigerian journalism through the lens of Bourdieusian field theory — asking how stories are made, who controls them, and how communication shapes power.</p>
+        <p>Today I lead postgraduate curriculum in a UK university, where I direct a Master's programme in journalism and media communications and hold responsibility for postgraduate quality across the school. My scholarship spans media sociology, strategic public relations in emerging economies, digital divides, and health communication in Sub-Saharan Africa.</p>
+        <p>Beyond the academy, I work with leaders — through coaching, consulting, and the communities I lead — to help them <strong>think clearly, communicate with authority, and lead with strategy.</strong> The academy teaches me the mechanics of communication. The work with leaders teaches me the stakes.</p>
+        <p>I also serve as a minister and lead a women's leadership community, where the same conviction holds: that purpose without clear communication rarely reaches the people it was meant for.</p>
+      </div>
+      <aside class="about-side reveal">
+        <h4>Current Roles</h4>
+        <p>Associate Professor & Head of Postgraduate Curriculum · Programme Leader, MA Journalism & Media Communications</p>
+        <h4>Networks Founded</h4>
+        <p>African PhD Scholars Network · Blossoms Ladies Network · Auxano Consulting</p>
+        <h4>Research Fields</h4>
+        <p>Media sociology · Strategic communication · Decolonial communication · Health & development communication</p>
+        <h4>Based In</h4>
+        <p>United Kingdom · Working across Africa & Europe</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="sec-label reveal">What I Do</p>
+    <h2 class="sec-title reveal">Three bodies of work, <em>one through-line.</em></h2>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="pillar-num">01</span>
+        <h3>Scholarship</h3>
+        <p>Peer-reviewed research, monographs, and edited volumes on journalism, strategic communication, and the politics of media in emerging economies. Supervision and examination across multiple institutions.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">02</span>
+        <h3>Strategy & Consulting</h3>
+        <p>Through Auxano, I advise leaders, founders, and organisations on communication strategy and brand — translating expertise into a clear, compelling, and credible public voice.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">03</span>
+        <h3>Leadership & Community</h3>
+        <p>Founder of networks that develop emerging scholars and women leaders — building people, not just programmes, and equipping them to communicate their calling with confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <p class="sec-label reveal">Research & Writing</p>
+    <h2 class="sec-title reveal">Selected work and current projects.</h2>
+    <div class="research-list">
+      <div class="research-item reveal">
+        <span class="research-tag">Monograph</span>
+        <div>
+          <h3><em>When Passion is Insufficient</em></h3>
+          <p>A field-theoretical study of Nigerian journalism — examining the structural conditions under which journalists work and the forces that shape what gets reported.</p>
+        </div>
+      </div>
+      <div class="research-item reveal">
+        <span class="research-tag">Edited Volumes</span>
+        <div>
+          <h3>Strategic Public Relations in Emerging Economies</h3>
+          <p>Lead editor of a two-volume scholarly collection examining communication practice and theory across developing markets.</p>
+        </div>
+      </div>
+      <div class="research-item reveal">
+        <span class="research-tag">Ongoing Research</span>
+        <div>
+          <h3>Digital Divides & Health Communication in Sub-Saharan Africa</h3>
+          <p>A co-authored portfolio investigating access, equity, and communication in digital and health contexts across the continent.</p>
+        </div>
+      </div>
+      <div class="research-item reveal">
+        <span class="research-tag">Podcast</span>
+        <div>
+          <h3>The African PhD Chronicles</h3>
+          <p>Conversations with African doctoral scholars on the realities of the research journey — building visibility and community for the next generation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="speaking" class="speaking">
+  <div class="wrap">
+    <p class="sec-label reveal">Speaking</p>
+    <h2 class="sec-title reveal">Bring rigour and <em>clarity</em> to your stage.</h2>
+    <div class="speak-grid">
+      <div class="speak-body reveal">
+        <p>I speak to academic, professional, and faith audiences on communication, leadership, and the discipline of telling a clear story. Whether a keynote, a workshop, or a panel, I bring the same thing: the rigour of a scholar and the directness of a practitioner.</p>
+        <p>Recent engagements span universities, conferences, leadership summits, and recruitment events across the UK and Africa.</p>
+        <a href="#connect" class="btn btn-primary" style="margin-top:1rem;display:inline-block">Check availability</a>
+      </div>
+      <ul class="speak-topics reveal">
+        <li>How stories shape power — and who gets to tell them</li>
+        <li>Communicating with clarity, authority & strategy</li>
+        <li>Decolonial perspectives on media & communication</li>
+        <li>Building visibility as an emerging scholar or leader</li>
+        <li>Strategic communication in emerging economies</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" id="connect">
+  <div class="wrap reveal">
+    <h2>Let's <em>work together.</em></h2>
+    <p>For research collaboration, speaking enquiries, or strategic communication advisory through Auxano — I would be glad to hear from you.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a href="mailto:hello@genevievebosah.com" class="btn btn-primary">Book a discovery call</a>
+      <a href="#research" class="btn btn-ghost">Read my work</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Dr Genevieve <span>Bosah</span></div>
+        <p class="foot-tag">Communication scholar, strategist, and speaker. Helping leaders communicate with clarity, authority, and strategy.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>Explore</h5>
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#speaking">Speaking</a>
+        </div>
+        <div class="foot-col">
+          <h5>Connect</h5>
+          <a href="https://uk.linkedin.com/in/genevievebosah" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/drgenebosah/" target="_blank" rel="noopener">Instagram</a>
+          <a href="mailto:hello@genevievebosah.com">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Dr Genevieve Bosah. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+</script>
+</body>
+</html>
