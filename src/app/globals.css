@@ -58,6 +58,14 @@ nav{
 .hero h1 em{font-style:italic;color:var(--teal)}
 .hero-lead{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--ink-soft);max-width:54ch;font-weight:300;margin-bottom:2.4rem}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:4rem;align-items:center}
+.hero-portrait{position:relative;width:100%;max-width:400px;justify-self:end}
+.hero-portrait:before{content:"";position:absolute;inset:1.1rem -1.1rem -1.1rem 1.1rem;border:1px solid var(--gold);border-radius:3px}
+.hero-portrait img{position:relative;display:block;width:100%;height:auto;border-radius:3px}
+@media(max-width:760px){
+  .hero-grid{grid-template-columns:1fr;gap:3.5rem}
+  .hero-portrait{max-width:340px;justify-self:start}
+}
 .btn{
   font-family:var(--serif-display);font-size:15px;letter-spacing:.01em;
   padding:.85rem 1.7rem;border-radius:2px;text-decoration:none;

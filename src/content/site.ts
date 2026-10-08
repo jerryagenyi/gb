@@ -8,7 +8,13 @@ export type SiteContent = {
   meta: { title: string };
   brand: { first: string; last: string };
   nav: NavLink[];
-  hero: { eyebrow: string; title: Rich; lead: string; ctas: ButtonLink[] };
+  hero: {
+    eyebrow: string;
+    title: Rich;
+    lead: string;
+    ctas: ButtonLink[];
+    portrait: { src: string; alt: string; width: number; height: number };
+  };
   roles: string[];
   about: {
     label: string;
@@ -48,6 +54,12 @@ export const site: SiteContent = {
       { label: 'Explore the research', href: '#research', variant: 'primary' },
       { label: 'Invite me to speak', href: '#speaking', variant: 'ghost' },
     ],
+    portrait: {
+      src: '/images/genevieve-bosah.webp',
+      alt: 'Dr Genevieve Bosah smiling, arms folded, in a white blouse',
+      width: 730,
+      height: 912,
+    },
   },
   roles: ['PhD, Media & Communication', 'Associate Professor', 'Strategic Communicator', 'Author', 'Speaker'],
   about: {
