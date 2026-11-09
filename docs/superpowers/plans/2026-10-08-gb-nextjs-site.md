@@ -1224,6 +1224,14 @@ Expected: newest deployment `● Ready`, Production.
 - **Phase 1: DONE.** Production: https://gb-khaki.vercel.app (Vercel project `gb`, Git-connected, `main` = production). 8/8 tests, lint and build clean; independent review passed.
 - **Phase 2: Vercel side done.** `genevievebosah.com` + `www.genevievebosah.com` added to project `gb`. Vercel requires **`A @ 76.76.21.21`** and **`A www 76.76.21.21`**. Waiting on Genevieve's cPanel/WP access for Steps 1–9.
 
+## Status update (2026-11-09) — Phase 2 CUTOVER DONE ✅
+
+- DNS edited in cPanel Zone Editor (nameservers unchanged: `dns1/dns2.namecheaphosting.com`): `@` A `198.54.116.9` → **`216.198.79.1`** (current Vercel value — supersedes the `76.76.21.21` quoted above), `www` CNAME → **`7a4246585037f484.vercel-dns-017.com`**. Both domains show "Valid Configuration" in Vercel; verified live (`Server: Vercel`, 200, MX untouched).
+- **Zone snapshot + revert procedure: `docs/ops/dns-genevievebosah-com.md`.** WP content archive: `docs/legacy-wp-export/wp-export.json` (2 posts, 15 pages, 97 media — all pages but 3 are empty).
+- Registrar correction: it is **Wild West Domains (GoDaddy reseller), not Namecheap** — expires 2027-08-20; recover that login before renewal. Not needed for DNS (zone lives in Namecheap cPanel).
+- cPanel facts: account main domain is `researcherpodcast.com`; `genevievebosah.com` is an addon domain sharing docroot `/public_html`; 0 email mailboxes exist.
+- Still pending from Phase 2: Step 1 full-account cPanel backup (old WP now only reachable via `cpanel.genevievebosah.com:2083` / temp URL), Step 9 raise TTLs.
+
 ## Phase 2 — Domain cutover (only after Genevieve's go-ahead)
 
 Ops runbook, not code. DNS lives in **cPanel → Zone Editor** on the Namecheap hosting (nameservers `dns1/dns2.namecheaphosting.com`).
