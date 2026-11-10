@@ -68,6 +68,6 @@ Do **not** touch MX/TXT/SRV records or the nameservers during a revert.
 - Still manageable via cPanel (`cpanel.genevievebosah.com:2083` → File Manager / phpMyAdmin / Softaculous) and likely via temp URL `http://server193.web-hosting.com/~resedhdg/`.
 - Content safety nets:
   - `docs/legacy-wp-export/wp-export.json` — full REST export (2 posts, 15 pages, 97 media URLs, categories, users) taken 2026-11-09, before cutover.
-  - **Pending:** cPanel → Backup → *Download a Full Account Backup* (the complete filesystem+DB archive; do before deleting anything).
+  - **Full account backup taken 2026-11-09:** `backup-11.9.2026_15-08-13_resedhdg.tar.gz` (1.8 GB, gitignored, stored at repo root on Jerry's laptop). Verified: valid gzip; contains `mysql/resedhdg_gene.sql` (WP database) + `mysql/resedhdg_aspn.sql` + full homedir. **Action: copy off-machine** (external drive / VPS) — a single laptop copy is not a backup.
 - WP has exactly one user: `admin` (the `geneboska26` login never existed on this install). Password reset possible via cPanel → phpMyAdmin → `wp_users` if the old install is ever needed again.
 - Plan (Phase 3): fresh headless WP on `cms.genevievebosah.com`, import the 2 posts from the export — do not resurrect this install.
