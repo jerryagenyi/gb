@@ -23,6 +23,15 @@
 3. **The 4 WP.com drafts:** she exports from WP.com (Tools → Export) if wanted — needs her WP.com login.
 4. Old comments/discussion: WP.com comments are not in the public posts API — skip unless she exports them.
 
+## Execution status (2026-11-10)
+
+- **Pre-config done:** comments + pings closed; Hello world / Sample Page / Privacy Policy deleted; display author "Genevieve Bosah" (id 3, author role, hello@genevievebosah.com — password in handover note to Jerry/Genevieve only).
+- **Task 1 DONE:** plugins deleted (Extendify ×2, BeyondSEO, CookieAdmin ×2, MonsterInsights*, Akismet, Hello Dolly*); **WPGraphQL 2.26.2 active** — works at `/index.php?graphql` (pretty `/graphql` activates once permalinks are set). *MonsterInsights delete 500s (broken uninstall hook, left inactive — delete via wp-admin); Hello Dolly route 404s (inactive, cosmetic).
+- **Task 2 DONE:** media 7 (Brown-Quote) + 8 (Study-Header) uploaded from backup tarball; posts 9 (`should-you-change-your-accent`, 2021-09-20) + 10 (`on-setting-goals`, 2021-12-27) imported as drafts, author 3, featured media set, original dates exact. Post 433 originally had no featured image — header graphic assigned as pragmatic card image (removable).
+- **Task 3 DONE:** 27 WP.com posts (2013–2020) imported as drafts with original dates/slugs/categories via `scripts/import_wpcom.py` (idempotent, state in `docs/legacy-wp-export/import-state.json`). Claude Code review incorporated (config-first, deactivate-before-delete, rate-limit abort, date_gmt, srcset/data-* stripping, inter-post links → `/blog/slug`). **Media remediation:** first pass missed WP.com images hosted at `genevievebosah.wordpress.com/wp-content/uploads/*` (blog-domain, not files.wordpress.com) and treated featured_image URLs as IDs — `scripts/fix_wpcom_media.py` sideloaded the 10 real images, rewrote 6 posts, set 3 featured images. Final verified state: **29 drafts**, all author id 3, dates 2013-08-28 → 2021-12-27, zero external image srcs except one legitimate YouTube embed (post 14) and one broken img removed (post 20). Handover: `docs/handover-genevieve.md`.
+- **Manual wp-admin steps pending (Jerry or Genevieve, 1 min):** Settings → Permalinks → "Post name" (activates `/graphql`); Settings → General → timezone "London" + both site URLs → `https://cms.genevievebosah.com`; delete MonsterInsights + Hello Dolly from Plugins page.
+- **Claude's other accepted points queued:** old-WP removal procedure (below); WP.com duplicate-content step after Task 6 (make WP.com private or buy Site Redirect — needs Genevieve's WP.com login, bundle with the 4-drafts ask); copy backup off-machine before old-WP removal.
+
 ## Tasks
 
 ### Task 1 — CMS hardening + WPGraphQL

@@ -11,3 +11,6 @@ coverage/
 
 # cPanel full-account backups — too large for git; keep a copy off-machine
 backup-*.tar.gz
+
+# import script credential (rotate after setup)
+.wp-import-secret

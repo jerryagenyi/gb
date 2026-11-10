@@ -52,6 +52,8 @@ Records **not** listed in the change table above were untouched and still point 
 
 ## Revert procedure — return to Namecheap hosting only
 
+> **Caveat (2026-11-10):** once the old WP in `public_html` is removed per `hosting-estate-map.md`, this revert would show an empty page instead of WordPress — restoring the site then means extracting `homedir/public_html` + `mysql/resedhdg_gene.sql` from the backup tarball (or `C:\Users\Username\gb-wp-archive\`) first. Do that restore BEFORE flipping these records.
+
 Nameservers never changed, so reverting is two record edits:
 
 1. Log in: `https://cpanel.genevievebosah.com:2083` → **Zone Editor** → manage `genevievebosah.com`
